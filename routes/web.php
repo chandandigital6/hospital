@@ -42,6 +42,8 @@ Route::post('forget',[AuthController::class,'forget_pass'])->name('auth.forget_p
 Route::get('reset-password',[AuthController::class,'reset_password'])->name('reset-password');
 Route::post('store-password',[AuthController::class,'store_password'])->name('store-password');
 
+Route::post('appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
+
 
 Route::get('dashboard', [AuthController::class, 'dashboard'])
     ->middleware(['auth'])
@@ -70,7 +72,6 @@ Route::group(['middleware' => ['auth']],function (){
 
     Route::get('appointment/index',[AppointmentController::class,'index'])->name('appointment.index');
     Route::get('appointment/create',[AppointmentController::class,'create'])->name('appointment.create');
-    Route::post('appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
     Route::get('appointment/edit/{appointment}',[AppointmentController::class,'edit'])->name('appointment.edit');
     Route::post('appointment/update/{appointment}',[AppointmentController::class,'update'])->name('appointment.update');
     Route::get('appointment/delete/{appointment}',[AppointmentController::class,'delete'])->name('appointment.delete');
