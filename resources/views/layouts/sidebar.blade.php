@@ -95,21 +95,21 @@
                 </li>
 
                 <li class="nav-item">
-                     <a href="{{route('blog.index')}}" class="nav-link">
+                     <a href="{{route('blogs.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-asterisk"></i>
                         <p>
                             Blog
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    {{-- <a href="{{route('article.index')}}" class="nav-link">
-                        <i class="nav-icon fa fa-cog"></i>
-                        <p>
-                            Blog Article
-                        </p>
-                    </a> --}}
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                     <a href="{{route('blog.create')}}" class="nav-link">--}}
+{{--                        <i class="nav-icon fa fa-cog"></i>--}}
+{{--                        <p>--}}
+{{--                            Blog Article--}}
+{{--                        </p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
                 <li class="nav-item">
                     {{-- <a href="{{route('faq.index')}}" class="nav-link">

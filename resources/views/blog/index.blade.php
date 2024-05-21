@@ -27,7 +27,7 @@
                     <div class="card-header bg-primary text-white">
                         <div class="d-flex justify-content-between align-items-center">
                             <h1>Blog</h1>
-                            <a href="{{ route('blog.create') }}" class="btn btn-light">Create About</a>
+                            <a href="{{ route('blogs.create') }}" class="btn btn-light">Create Blog</a>
                         </div>
                     </div>
 
@@ -66,10 +66,10 @@
                                         <td>{{$blog->author_name}}</td>
                                         <td><img src="{{ asset('storage/'.$blog->image) }}" alt="{{ $blog->title }}" style="max-width: 100px;"></td>
                                         <td>
-                                            <a href="{{ route('blog.edit', $blog->id) }}" class="btn btn-primary">Edit</a>
-                                            <a href="{{ route('blog.delete', $blog->id) }}" class="btn btn-danger">Delete</a>
+                                            <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-primary">Edit</a>
+                                            <a href="{{ route('blogs.delete', $blog->id) }}" class="btn btn-danger">Delete</a>
                                             <!-- Add delete button if needed -->
-                                            <a href="{{ route('blog.duplicate', $blog->id) }}" class="btn btn-warning">Duplicate</a>
+                                            <a href="{{ route('blogs.duplicate', $blog->id) }}" class="btn btn-warning">Duplicate</a>
 
                                         </td>
                                     </tr>

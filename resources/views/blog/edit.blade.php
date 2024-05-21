@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form action="{{ route('blog.update',$blog->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('blogs.update',$blog->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="image">Image URL</label>

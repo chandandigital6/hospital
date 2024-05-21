@@ -4,7 +4,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\BannerController;
-use App\Http\Controllers\BlogController;
+
 use App\Http\Controllers\PlanCOntroller;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
@@ -124,27 +124,28 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('team/delete/{team}',[TeamController::class,'delete'])->name('team.delete');
     Route::get('team/duplicate/{team}',[TeamController::class,'duplicate'])->name('team.duplicate');
 
-    // enquiry
+//    // enquiry
+//    Route::prefix('blog')->name('blog.')->group(function(){
+//        Route::get('/',[BlogController::class,'index'])->name('index');
+//        Route::get('create/',[BlogController::class,'create'])->name('create');
+//        Route::post('store',[BlogController::class,'store'])->name('store');
+//        Route::get('edit/{blog}',[BlogController::class,'edit'])->name('edit');
+//        Route::post('update/{blog}',[BlogController::class,'update'])->name('update');
+//        Route::get('delete/{blog}',[BlogController::class,'delete'])->name('delete');
+//        Route::get('duplicate/{blog}',[BlogController::class,'duplicate'])->name('duplicate');
+//    });
 
-    Route::get('blog/index',[BlogController::class,'index'])->name('blog.index');
-    Route::get('blog/create',[BlogController::class,'create'])->name('blog.create');
-    Route::post('blog/store',[BlogController::class,'store'])->name('blog.store');
-    Route::get('blog/edit/{blog}',[BlogController::class,'edit'])->name('blog.edit');
-    Route::post('blog/update/{blog}',[BlogController::class,'update'])->name('blog.update');
-    Route::get('blog/delete/{blog}',[BlogController::class,'delete'])->name('blog.delete');
-    Route::get('blog/duplicate/{blog}',[BlogController::class,'duplicate'])->name('blog.duplicate');
 
-//
-//    // counter logo
-//
-//    Route::get('client/index',[ClientController::class,'index'])->name('client.index');
-//    Route::get('client/create',[ClientController::class,'create'])->name('client.create');
-//    Route::post('client/store',[ClientController::class,'store'])->name('client.store');
-//    Route::get('client/edit/{client}',[ClientController::class,'edit'])->name('client.edit');
-//    Route::post('client/update/{client}',[ClientController::class,'update'])->name('client.update');
-//    Route::get('client/delete/{client}',[ClientController::class,'delete'])->name('client.delete');
-//    Route::get('client/duplicate/{client}',[ClientController::class,'duplicate'])->name('client.duplicate');
-//
+    // counter logo
+
+    Route::get('blogs/index',[\App\Http\Controllers\BlogController::class,'index'])->name('blogs.index');
+    Route::get('blogs/create',[\App\Http\Controllers\BlogController::class,'create'])->name('blogs.create');
+    Route::post('blogs/store',[\App\Http\Controllers\BlogController::class,'store'])->name('blogs.store');
+    Route::get('blogs/edit/{blog}',[\App\Http\Controllers\BlogController::class,'edit'])->name('blogs.edit');
+    Route::post('blogs/update/{blog}',[\App\Http\Controllers\BlogController::class,'update'])->name('blogs.update');
+    Route::get('blogs/delete/{blog}',[\App\Http\Controllers\BlogController::class,'delete'])->name('blogs.delete');
+    Route::get('blogs/duplicate/{blog}',[\App\Http\Controllers\BlogController::class,'duplicate'])->name('blogs.duplicate');
+
 //    //counter
 //
 //    Route::get('counter/index',[CounterController::class,'index'])->name('counter.index');

@@ -49,13 +49,13 @@ class BlogController extends Controller
 
         $blog->update($blogData);
 
-        return redirect()->route('blog.index')->with('success', 'blog item successfully updated');
+        return redirect()->route('blogs.index')->with('success', 'blog item successfully updated');
     }
 
 
     public function delete(Blog $blog){
         $blog->delete();
-        return redirect()->route('blog.index')->with('error','Successfully  blog items deleted');
+        return redirect()->route('blogs.index')->with('error','Successfully  blog items deleted');
 
     }
     public function duplicate(Blog $blog){
