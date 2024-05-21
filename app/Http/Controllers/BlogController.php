@@ -31,7 +31,7 @@ class BlogController extends Controller
 
         $blog->image = str_replace('public/', '', $image);
         $blog->save();
-        return redirect()->route('blog.index')->with('success', 'Blog  created successfully.');
+        return redirect()->route('blogs.index')->with('success', 'Blog  created successfully.');
     }
 
     public function edit(Blog $blog){
