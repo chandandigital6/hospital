@@ -344,18 +344,20 @@
                     <h1 class="display-4">Our Latest Medical Blog Posts</h1>
                 </div>
                 <div class="row g-5">
+                    @foreach($blogs->take(3) as $blog)
+
+
                     <div class="col-xl-4 col-lg-6">
                         <div class="bg-light rounded overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('asset/img/blog-1.jpg')}}" alt="">
+                            <img class="img-fluid w-100" src="{{asset('storage/'.$blog->image)}}" alt="">
                             <div class="p-4">
-                                <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                                <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                    rebum clita rebum dolor stet amet justo</p>
+                                <a class="h3 d-block mb-3" href="{{route('blog-details',$blog->id)}}">{{$blog->title}}</a>
+                                <p class="m-0">{{$blog->short_description}}</p>
                             </div>
                             <div class="d-flex justify-content-between border-top p-4">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle me-2" src="{{asset('asset/img/user.jpg')}}" width="25" height="25" alt="">
-                                    <small>John Doe</small>
+{{--                                    <img class="rounded-circle me-2" src="{{asset('asset/img/user.jpg')}}" width="25" height="25" alt="">--}}
+                                    <small>{{$blog->author_name}}</small>
                                 </div>
                                 <div class="d-flex align-items-center">
                                     <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
@@ -364,46 +366,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-6">
-                        <div class="bg-light rounded overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('asset/img/blog-2.jpg')}}" alt="">
-                            <div class="p-4">
-                                <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                                <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                    rebum clita rebum dolor stet amet justo</p>
-                            </div>
-                            <div class="d-flex justify-content-between border-top p-4">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle me-2" src="{{asset('asset/img/user.jpg')}}" width="25" height="25" alt="">
-                                    <small>John Doe</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                    <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6">
-                        <div class="bg-light rounded overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('asset/img/blog-3.jpg')}}" alt="">
-                            <div class="p-4">
-                                <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                                <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                    rebum clita rebum dolor stet amet justo</p>
-                            </div>
-                            <div class="d-flex justify-content-between border-top p-4">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle me-2" src="{{asset('asset/img/user.jpg')}}" width="25" height="25" alt="">
-                                    <small>John Doe</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                    <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>

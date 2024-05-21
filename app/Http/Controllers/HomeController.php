@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Banner;
+use App\Models\Blog;
 use App\Models\Plan;
 use App\Models\Service;
 use App\Models\Team;
@@ -19,7 +20,8 @@ class HomeController extends Controller
         $plans=Plan::all();
         $testimonials=Testimonial::all();
         $teams=Team::all();
-        return view('front.index',compact('banner','about','services','plans','testimonials','teams'));
+        $blogs=Blog::all();
+        return view('front.index',compact('banner','blogs','about','services','plans','testimonials','teams'));
       }
       public function about(){
           $teams=Team::all();
@@ -50,4 +52,16 @@ class HomeController extends Controller
       public function appointment(){
           return view('front.appointment');
       }
+
+    public function blog(){
+        $blogs=Blog::all();
+        return view('front.blog',compact('blogs'));
+    }
+    public function blogDetails(Blog $blog){
+       $categories = Blog::all();
+        $recentPosts = Blog::orderBy('created_at', 'desc')->take(5)->get();
+//
+        // Pass the data to the view
+        return view('front.blogDetails', compact('blog', 'categories', 'recentPosts'));
+    }
 }

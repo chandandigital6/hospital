@@ -17,8 +17,8 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
-                            <a href="{{ route('home') }}" class="dropdown-item {{ Route::currentRouteName() == 'blog.grid' ? 'active' : '' }}">Blog Grid</a>
-                            <a href="{{ route('home') }}" class="dropdown-item {{ Route::currentRouteName() == 'blog.detail' ? 'active' : '' }}">Blog Detail</a>
+                            <a href="{{ route('blog') }}" class="dropdown-item {{ Route::currentRouteName() == 'blog.grid' ? 'active' : '' }}">Blog Grid</a>
+{{--                            <a href="{{ route('blog-details') }}" class="dropdown-item {{ Route::currentRouteName() == 'blog.detail' ? 'active' : '' }}">Blog Detail</a>--}}
                             <a href="{{ route('team') }}" class="dropdown-item {{ Route::currentRouteName() == 'team' ? 'active' : '' }}">The Team</a>
                             <a href="{{ route('testimonial') }}" class="dropdown-item {{ Route::currentRouteName() == 'testimonial' ? 'active' : '' }}">Testimonial</a>
                             <a href="{{ route('appointment') }}" class="dropdown-item {{ Route::currentRouteName() == 'appointment' ? 'active' : '' }}">Appointment</a>
